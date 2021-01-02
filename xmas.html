@@ -19,15 +19,18 @@
 			background-image: url('https://pngimg.com/uploads/envelope/envelope_PNG18366.png');
 			background-size: cover;
 			background-position: center;
-
+			cursor: pointer;
 			margin: 200px auto 0px auto;
 		}
 		.envelope-msg {
 			color: white;
 			text-align: center;
 		}
-		.letter-close {
+		.letter-open {
 			display: none;
+		}
+		.letter-close {
+			display: block;
 		}
 		.rtan {
 			width: 200px;
@@ -62,23 +65,48 @@
 			text-align: right;
 			margin-bottom: 0px;
 		}
+		@media screen and (max-width: 760px) {
+			.envelope {
+				margin: 150px auto 0px auto;
+			}
+			.message-box {
+				width: 300px;
+				padding: 20px;
+			}
+			.rtan {
+				width: 150px;
+				height: 150px;
+				margin: 70px auto 0px auto;
+			}
+			h1 {
+    			font-size: 28px;
+			}
+		}
 	</style>
+	<script>
+		function open_letter() {
+			document.getElementsByClassName("letter-close")[0].style.display = 'none'
+			document.getElementsByClassName("letter-open")[0].style.display = 'block'
+		}
+	</script>
 </head>
 <body>
 	<div class="letter-close">
-		<div class="envelope">
+		<div class="envelope" onclick="open_letter()">
 		</div>
 		<h2 class="envelope-msg">봉투를 열어봐!</h2>
 	</div>
-	<div class="rtan"></div>
-	<h1>ㅂㅇㅂㅇ2020년</h1>
-	<div class="message-box">
-		친구들에게. <br />
-		올해 이런저런 일이 많았는데 <br />
-		너희 덕분에 하나도 힘들지 않았어 <br />
-		내년에도 우리 우정 변치말자 <br />
-		연말에 다 같이 못 봐서 아쉽다 <br />
-		<p class="from">2021.01.02 jinwkim</p>
+	<div class="letter-open">
+		<div class="rtan"></div>
+		<h1>ㅂㅇㅂㅇ2020년</h1>
+		<div class="message-box">
+			친구들에게. <br />
+			올해 이런저런 일이 많았는데 <br />
+			너희 덕분에 하나도 힘들지 않았어 <br />
+			내년에도 우리 우정 변치말자 <br />
+			연말에 다 같이 못 봐서 아쉽다 <br />
+			<p class="from">2021.01.02 jinwkim</p>
+		</div>
 	</div>
 </body>
 </html>
